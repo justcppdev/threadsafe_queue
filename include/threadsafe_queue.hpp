@@ -131,7 +131,8 @@ auto threadsafe_queue<T>::try_pop(T& value) -> bool
     return false;
   }
 
-  return pop_head(value);
+  value = pop_head();
+  return true;
 }
 
 template <typename T>
